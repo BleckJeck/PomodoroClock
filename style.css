@@ -4,22 +4,22 @@ body {
 
 .controls {
   margin: 50px auto;
-  width: 200px; /* TO DO: check later */
+  width: 150px; /* TO DO: check later */
   text-align: center;
   display: grid;
   grid-auto-columns: auto;
-  border: 1px solid black;
+  background-color: #e7e7e7;
   padding: 10px;
 }
 
-.active-time {
-  width: 100px;
+.working-time {
+  width: 75px;
   grid-column: 1;
   grid-row: 1;
 }
 
 .break-time {
-  width: 100px;
+  width: 75px;
   grid-column: 2;
   grid-row: 1;
 }

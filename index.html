@@ -13,24 +13,24 @@
 <body>
   <div class="container">
     <div class="controls">
-      <div class="active-time">
-        <label for="active">Work</label><br>
-        <input name="active" type="number">
+      <div class="working-time">
+        <label>Work</label><br>
+        <input id="work" type="number">
       </div>
       <div class="break-time">
-        <label for="break">Break</label><br>
-        <input name="break" type="number">
+        <label>Break</label><br>
+        <input id="break" type="number">
       </div>
       <div class="buttons">
         <i id="play" class="fa fa-play-circle-o"></i>
-        <i id="pause" class="fa fa-pause-circle-o"></i>
+        <i id="pause" class="fa fa-stop-circle-o" style="display:none"></i>
       </div>
     </div>
     <div class="clock-frame">
       <div class="circle outer-circle">
         <div class="circle inner-circle">
           <div class="time">
-            <span id="countdown">12:00</span>
+            <p id="countdown"><span id="min">00</span>:<span id="sec">00</span></p>
           </div>
         </div>
       </div>
@@ -39,6 +39,7 @@
       <p>Coded by <a href="#">BleckJeck</a></p>
     </div>
   </div>
+  <script src="app.js"></script>
 </body>
 
 </html>
