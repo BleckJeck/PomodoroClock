@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pomodoro Clock</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="controls">
+      <div class="active-time">
+        <label for="active">Work</label><br>
+        <input name="active" type="number">
+      </div>
+      <div class="break-time">
+        <label for="break">Break</label><br>
+        <input name="break" type="number">
+      </div>
+      <div class="buttons">
+        <i id="play" class="fa fa-play-circle-o"></i>
+        <i id="pause" class="fa fa-pause-circle-o"></i>
+      </div>
+    </div>
+    <div class="clock-frame">
+      <div class="circle outer-circle">
+        <div class="circle inner-circle">
+          <div class="time">
+            <span id="countdown">12:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Coded by <a href="#">BleckJeck</a></p>
+    </div>
+  </div>
+</body>
+
+</html>
