@@ -4,6 +4,9 @@
 const play = document.getElementById('play');
 const pause = document.getElementById('pause');
 
+// grabs the outer circle for colour fill animation
+const outerCircle = document.getElementById('outer');
+
 // grabs the minutes and seconds on the clock
 let min = document.getElementById('min');
 let sec = document.getElementById('sec');
@@ -15,15 +18,22 @@ pause.addEventListener('click', stopCountdown);
 
 // the timer needs to a global variable to be accessed by clearInterval
 let timer;
+let colourFill;
+
 let seconds;
 let minutes;
+
+let step;
+let deg;
+
 let activeCycle = true;
 
 function setTimer() {
   // grabs the input values
   minutes = document.getElementById('work').value;
   seconds = 0;
-
+  deg = 0;
+  step = minutes * 60 / 360;
   // sets the starting time on the clock
   min.innerHTML = minutes.toString().padStart(2, '0');
   sec.innerHTML = seconds.toString().padStart(2, '0');
@@ -31,12 +41,14 @@ function setTimer() {
 
 function stopCountdown() {
   clearInterval(timer);
+  clearInterval(colourFill);
   play.style.display = 'block';
   pause.style.display = 'none';
 }
 
 function startCountdown() {
   timer = setInterval(countdown, 1000);
+  colourFill = setInterval(fillArea, step*1000);
   play.style.display = 'none';
   pause.style.display = 'block';
 }
@@ -51,6 +63,8 @@ function countdown() {
     sec.innerHTML = seconds.toString().padStart(2, '0');
     min.innerHTML = minutes.toString().padStart(2, '0');
   } else if (sec.innerHTML == 0 && min.innerHTML == 0) {
+    clearInterval(timer);
+    clearInterval(colourFill);
     activeCycle = !activeCycle;
     if (activeCycle) {
       minutes = document.getElementById('work').value;
@@ -59,5 +73,23 @@ function countdown() {
       minutes = document.getElementById('break').value;
       min.innerHTML = minutes.toString().padStart(2, '0');
     }
+    step = minutes * 60 / 360;
+    deg = 0;
+    timer = setInterval(countdown, 1000);
+    colourFill = setInterval(fillArea, step*1000);
+  }
+}
+
+function fillArea() {
+  if (deg > 360) {
+    clearInterval(colourFill);
+    deg = 0;
+  }
+  else if (deg <= 180) {
+    outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, transparent 50%, white 50%), linear-gradient(90deg, white 50%, red 50%)';
+    deg++;
+  } else {
+    outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, red 50%, transparent 50%), linear-gradient(90deg, white 50%, red 50%)';
+    deg++;
   }
 }
