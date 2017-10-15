@@ -41,7 +41,7 @@ function setTimer() {
   min.innerHTML = minutes.toString().padStart(2, '0');
   sec.innerHTML = seconds.toString().padStart(2, '0');
 
-  outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, transparent 50%, white 50%), linear-gradient(90deg, white 50%, red 50%)';
+  outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, transparent 50%, #123776 50%), linear-gradient(90deg, #123776 50%, #4F8438 50%)';
   deg++;
 
   startCountdown();
@@ -99,10 +99,10 @@ function fillArea() {
       deg = 0;
     }
     else if (deg <= 180) {
-      outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, transparent 50%, white 50%), linear-gradient(90deg, white 50%, green 50%)';
+      outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, transparent 50%, #123776 50%), linear-gradient(90deg, #123776 50%, #4F8438 50%)';
       deg++;
     } else {
-      outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, green 50%, transparent 50%), linear-gradient(90deg, white 50%, green 50%)';
+      outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, #4F8438 50%, transparent 50%), linear-gradient(90deg, #123776 50%, #4F8438 50%)';
       deg++;
     }
   } else {
@@ -111,10 +111,10 @@ function fillArea() {
       deg = 0;
     }
     else if (deg <= 180) {
-      outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, transparent 50%, white 50%), linear-gradient(90deg, white 50%, red 50%)';
+      outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, transparent 50%, #123776 50%), linear-gradient(90deg, #123776 50%, #BE1A1B 50%)';
       deg++;
     } else {
-      outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, red 50%, transparent 50%), linear-gradient(90deg, white 50%, red 50%)';
+      outer.style.backgroundImage = 'linear-gradient(' + (deg+90) +'deg, #BE1A1B 50%, transparent 50%), linear-gradient(90deg, #123776 50%, #BE1A1B 50%)';
       deg++;
     }
   }
